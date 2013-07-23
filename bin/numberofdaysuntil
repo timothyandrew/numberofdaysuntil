@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'numberofdaysuntil'
+
+date_string = ARGV.join(" ")
+date = Numberofdaysuntil::date_string_to_date(date_string)
+days_until = Numberofdaysuntil::days_until(date)
+
+if Numberofdaysuntil::valid?(date)
+  puts "There are #{days_until} days to go until #{date_string}."
+else
+  puts "Enter a date after today."
+end
